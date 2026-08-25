@@ -16,11 +16,11 @@ export const Hero = () => {
       {/* Bg */}
       <div className="absolute inset-0">
         <img
-          src="/hero-image.jpg"
+          src="/hero.png"
           alt="Hero image"
-          className="w-full h-full object-cover object-[50%_10%] opacity-40"
+          className="w-full h-full object-cover object-[50%_10%] opacity-80"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/20 via-background/80 to-background" />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/80 to-background" />
       </div>
 
       {/* Green Dots */}

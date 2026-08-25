@@ -52,10 +52,10 @@ export const Projects = () => {
   return (
     <section id="projects" className="py-32 relative overflow-hidden">
       {/* Bg glows */}
-      <div className="absolute top-1/4 right-0 w-96 h-96 bg-highlight/50 rounded-full blur-3xl" />
-      <div className="absolute bottom-1/4 right-0 w-96 h-96 bg-primary/50 rounded-full blur-3xl" />
-      <div className="absolute bottom-1/4 left-0 w-64 h-64 bg-highlight/60 rounded-full blur-3xl" />
-      <div className="absolute top-1/4 left-0 w-64 h-64 bg-primary/60 rounded-full blur-3xl" />
+      <div className="absolute top-1/4 right-0 w-96 h-96 bg-highlight/70 rounded-full blur-3xl" />
+      <div className="absolute bottom-1/4 right-0 w-96 h-96 bg-primary/60 rounded-full blur-3xl" />
+      <div className="absolute bottom-1/4 left-0 w-96 h-64 bg-highlight/70 rounded-full blur-3xl" />
+      <div className="absolute top-1/4 left-0 w-96 h-96 bg-primary/60 rounded-full blur-3xl" />
       <div className="container mx-auto px-6 relative z-10">
         {/* Section Header */}
         <div className="text-center mx-auto max-w-3xl mb-16">
