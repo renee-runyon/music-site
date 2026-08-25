@@ -61,7 +61,7 @@ export const Hero = () => {
               </h1>
               <p className="pb-8 text-lg text-white max-w-lg animate-fade-in animation-delay-200">
                 One voice, five projects.< br/>< br/>
-                From front-porch string band to solo songwriting to a heavier night on the dark side. Come find the one that's calling you.
+                From front-porch string band to solo songwriting to a heavier night on the dark side. Come find the sound that's calling you.
               </p>
             </div>
 
@@ -77,24 +77,6 @@ export const Hero = () => {
                 Projects<ArrowRight className="w-5 h-5" />
               </AnimatedBorderButton>
               </a>
-            </div>
-
-            {/* Social Links */}
-            <div className="pt-8 flex items-center gap-4 animate-fade-in animation-delay-400">
-              <span className="text-sm text-muted-foreground">Follow me: </span>
-              {[
-                { icon: Facebook, href: "#" },
-                { icon: Instagram, href: "#" },
-                { icon: Youtube, href: "#" },
-              ].map((social, idx) => (
-                <a
-                  key={idx}
-                  href={social.href}
-                  className="p-2 rounded-full glass hover:bg-primary/10 hover:text-primary transition-all duration-300"
-                >
-                  {<social.icon className="w-5 h-5" />}
-                </a>
-              ))}
             </div>
           </div>
         </div>
