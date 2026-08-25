@@ -2,38 +2,47 @@ import { ArrowUpRight, Github } from "lucide-react";
 import { AnimatedBorderButton } from "@/components/AnimatedBorderButton";
 const projects = [
   {
-    title: "Fintech Dashboard",
+    title: "Music with Sheila",
     description:
-      "A comprehensive financial analytics platform with real-time data visualization, portfolio management, and AI-powered insights.",
-    image: "/projects/project1.png",
-    tags: ["React", "Typescript", "NodeJS"],
+      "Sheila's own songs, voice, and guitar out front. The sound she comes home to between every other project.",
+    image: "/projects/musicwithsheila.jpeg",
+    tags: [""],
+    link: "https://www.facebook.com/musicwithsheila",
+    github: "#",
+  },
+  {
+    title: "Magnolia Street String Band",
+    description:
+      "A five-piece acoustic collective featuring local musicians.",
+    image: "/projects/magnoliaband.jpg",
+    tags: [""],
     link: "#",
     github: "#",
   },
   {
-    title: "E-Commerce Platform",
+    title: "Sheila Vee Band",
     description:
-      "A full-featured e-commerce solution with inventory management, payment processing, and analytics dashboard.",
-    image: "/projects/project2.png",
-    tags: ["Next.js", "Stripe", "PostgreSQL", "Tailwind"],
+      "The full electric lineup. Sheila's songs, turned up and built for the stage.",
+    image: "/projects/sheilavband.jpg",
+    tags: [""],
     link: "#",
     github: "#",
   },
   {
-    title: "AI Writing Assistant",
+    title: "Sheila & Gerry Jam",
     description:
-      "An intelligent writing tool powered by GPT-4, helping users create better content faster.",
-    image: "/projects/project3.png",
-    tags: ["React", "OpenAI", "Python", "FastAPI"],
+      "Monthly invitational curated by Sheila Vee & Gerry Rosenthal. Featuring the regions most talented musicians.",
+    image: "/projects/sheila-gerry.jpg",
+    tags: [""],
     link: "#",
     github: "#",
   },
-  {
-    title: "Project Management Tool",
+    {
+    title: "Disciples of the Dead",
     description:
-      "A collaborative workspace for teams with real-time updates, task tracking, and integrations.",
-    image: "/projects/project4.png",
-    tags: ["Next.js", "Socket.io", "MongoDB", "Redis"],
+      "New Jersey-based Grateful Dead tribute band featuring Michael Jaskewicz.",
+    image: "/projects/dodperforming.jpg",
+    tags: [""],
     link: "#",
     github: "#",
   },
@@ -49,18 +58,17 @@ export const Projects = () => {
         {/* Section Header */}
         <div className="text-center mx-auto max-w-3xl mb-16">
           <span className="text-secondary-foreground text-sm font-medium tracking-wider uppercase animate-fade-in">
-            Featured Work
+            Projects
           </span>
           <h2 className="text-4xl md:text-5xl font-bold mt-4 mb-6 animate-fade-in animation-delay-100 text-secondary-foreground">
-            Projects that
+            Music
             <span className="font-serif italic font-normal text-white">
               {" "}
-              make an impact.
+              that makes an impact.
             </span>
           </h2>
-          <p className="text-muted-foreground animate-fade-in animation-delay-200">
-            A selection of my recent work, from complex web applications to
-            innovative tools that solve real-world problems.
+          <p className="text-white animate-fade-in animation-delay-200">
+            Sheila splits her time across five very different rooms.<br />Tap any project to read more and jump straight to its music and socials.
           </p>
         </div>
 
@@ -130,14 +138,6 @@ export const Projects = () => {
               </div>
             </div>
           ))}
-        </div>
-
-        {/* View All CTA */}
-        <div className="text-center mt-12 animate-fade-in animation-delay-500">
-          <AnimatedBorderButton>
-            View All Projects
-            <ArrowUpRight className="w-5 h-5" />
-          </AnimatedBorderButton>
         </div>
       </div>
     </section>

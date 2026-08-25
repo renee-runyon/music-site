@@ -1,0 +1,26 @@
+<svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+<defs>
+  <radialGradient id="g5" cx="50%" cy="70%" r="80%">
+    <stop offset="0%" stop-color="#1a0f06"/>
+    <stop offset="55%" stop-color="#0a1628"/>
+    <stop offset="100%" stop-color="#04070d"/>
+  </radialGradient>
+  <radialGradient id="ember" cx="50%" cy="80%" r="40%">
+    <stop offset="0%" stop-color="#f7b733" stop-opacity="0.9"/>
+    <stop offset="100%" stop-color="#f7b733" stop-opacity="0"/>
+  </radialGradient>
+</defs>
+<rect width="800" height="600" fill="url(#g5)"/>
+<ellipse cx="400" cy="520" rx="260" ry="120" fill="url(#ember)"/>
+<g fill="#04070d" stroke="#9a5b08" stroke-width="2">
+  <polygon points="260,540 300,380 340,540"/>
+  <polygon points="380,540 400,320 420,540"/>
+  <polygon points="460,540 500,400 540,540"/>
+</g>
+<g opacity="0.8">
+  <path d="M400,300 C390,270 410,250 400,220 C420,250 430,270 400,300 Z" fill="#f7b733"/>
+</g>
+<g stroke="#3a2a12" stroke-width="1.5" opacity="0.5">
+  <line x1="0" y1="560" x2="800" y2="560"/>
+</g>
+</svg>

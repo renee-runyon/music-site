@@ -40,39 +40,22 @@ export const About = () => {
             </div>
 
             <h2 className="text-4xl md:text-5xl font-bold leading-tight animate-fade-in animation-delay-100 text-secondary-foreground">
-              Building the future,
-              <span className="font-serif italic font-normal text-white">
+              Sheila Vee
+              <span className="font-serif italic font-normal text-white text-2xl"><br />
                 {" "}
-                one component at a time.
+                Singer, songwriter, badass.
               </span>
             </h2>
 
             <div className="space-y-4 text-muted-foreground animate-fade-in animation-delay-200">
               <p>
-                I'm a passionate software engineer with over 5 years of
-                experience crafting digital products that make a difference. My
-                journey started with a curiosity for how things work on the web,
-                and it has evolved into a deep expertise in modern frontend
-                technologies.
-              </p>
-              <p>
-                I specialize in React, Next.js, and TypeScript, building
-                everything from sleek landing pages to complex enterprise
-                applications. My approach combines technical excellence with a
-                keen eye for design and user experience.
-              </p>
-              <p>
-                When I'm not coding, you'll find me exploring new technologies,
-                contributing to open-source projects, or sharing knowledge with
-                the developer community.
+                Sheila Vee is a singer, songwriter, and bandleader who refuses to stay in one lane. Across five projects — from front-porch bluegrass with Magnolia Street String Band to the plugged-in Sheila Vee Band, easygoing duo sets with Gerry, and the heavier minor-key world of Disciples of the Dead — she brings the same voice and the same songwriting instincts to every room she plays. Her debut solo album, under Music with Sheila, arrives in 2026.
               </p>
             </div>
 
             <div className="glass rounded-2xl p-6 glow-border animate-fade-in animation-delay-300">
               <p className="text-lg font-medium italic text-foreground">
-                "My mission is to create digital experiences that are not just
-                functional, but truly delightful — products that users love to
-                use and developers love to maintain."
+                "Singer/Songwriter, Sheila Vee, is a guitarist who plays bluegrass & jamband music, as well as the cosmic intersection of both genres."
               </p>
             </div>
           </div>
