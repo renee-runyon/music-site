@@ -12,7 +12,7 @@
   --color-secondary: #5d9dff;
   --color-secondary-foreground: #5d9dff;
 
-  --color-accent: #fbbf24
+  --color-accent: #fbbf24;
 
   --color-muted: #252e37;
   --color-muted-foreground: #7a8491;
@@ -46,6 +46,12 @@
 }
 
 @layer components {
+  .project-card {
+  background-color: color-mix(in srgb, var(--color-primary) 8%, var(--color-surface));
+  backdrop-filter: blur(16px);
+  border: 1px solid color-mix(in srgb, var(--color-primary) 25%, transparent);
+}
+
   .glass {
     background-color: color-mix(in srgb, var(--color-surface) 50%, transparent);
     backdrop-filter: blur(16px);

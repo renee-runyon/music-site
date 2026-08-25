@@ -8,7 +8,7 @@ const galleryImages = [
     area: "hero",
   },
   {
-    src: "/projects/maindod.jpg",
+    src: "/projects/sheila-gerry.jpg",
     alt: "Magnolia Street String Band",
     caption: "Magnolia Street String Band",
     area: "side1",
@@ -20,12 +20,19 @@ const galleryImages = [
     area: "side2",
   },
   {
-    src: "/projects/sheila-gerry.jpg",
+    src: "/projects/maindod.jpg",
     alt: "Disciples of the Dead",
     caption: "Disciples of the Dead",
     area: "banner",
   },
 ];
+
+const areaClass = {
+  hero: "lg:[grid-area:hero]",
+  side1: "lg:[grid-area:side1]",
+  side2: "lg:[grid-area:side2]",
+  banner: "lg:[grid-area:banner]",
+};
 
 export const About = () => {
   return (
@@ -65,15 +72,15 @@ export const About = () => {
 
           {/* Right Column - Gallery */}
           <div
-            className="grid grid-cols-1 grid-rows-2 gap-4 h-[450px] sm:h-[400px] lg:h-[500px]
-              lg:[grid-template-columns:1fr]
+            className="self-center grid grid-cols-2 grid-rows-2 gap-4 h-[450px] sm:h-[400px] lg:h-[500px]
+              lg:[grid-template-columns:1fr_1fr]
               lg:[grid-template-areas:'hero_side1'_'hero_side2'_'banner_banner']
               lg:grid-rows-[1fr_1fr_1fr]"
           >
             {galleryImages.map((img, idx) => (
               <div
                 key={idx}
-                className={`relative rounded-2xl overflow-hidden group animate-fade-in lg:[grid-area:${img.area}]`}
+                className={`relative rounded-2xl overflow-hidden group animate-fade-in ${areaClass[img.area]}`}
                 style={{ animationDelay: `${(idx + 1) * 100}ms` }}
               >
                 <img
@@ -81,7 +88,7 @@ export const About = () => {
                   alt={img.alt}
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />
-                <div className="absolute inset-0" />
+                <div className="absolute inset-0 " />
                 <div className="absolute bottom-0 left-0 right-0 p-4 translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
                   <p className="text-sm font-medium text-white">
                     {img.caption}
