@@ -1,28 +1,29 @@
 import { Code2, Lightbulb, Rocket, Users } from "lucide-react";
 
-const highlights = [
+const galleryImages = [
   {
-    icon: Code2,
-    title: "Clean Code",
-    description:
-      "Writing maintainable, scalable code that stands the test of time.",
+    src: "/projects/magnoliaband.jpg",
+    alt: "Sheila Vee performing live",
+    caption: "Sheila Vee Band",
+    area: "hero",
   },
   {
-    icon: Rocket,
-    title: "Performance",
-    description:
-      "Optimizing for speed and delivering lightning-fast user experiences.",
+    src: "/projects/maindod.jpg",
+    alt: "Magnolia Street String Band",
+    caption: "Magnolia Street String Band",
+    area: "side1",
   },
   {
-    icon: Users,
-    title: "Collaboration",
-    description: "Working closely with teams to bring ideas to life.",
+    src: "/projects/sheilavband.jpg",
+    alt: "Sheila Vee and Gerry",
+    caption: "With Gerry",
+    area: "side2",
   },
   {
-    icon: Lightbulb,
-    title: "Innovation",
-    description:
-      "Staying ahead with the latest technologies and best practices.",
+    src: "/projects/sheila-gerry.jpg",
+    alt: "Disciples of the Dead",
+    caption: "Disciples of the Dead",
+    area: "banner",
   },
 ];
 
@@ -41,7 +42,8 @@ export const About = () => {
 
             <h2 className="text-4xl md:text-5xl font-bold leading-tight animate-fade-in animation-delay-100 text-secondary-foreground">
               Sheila Vee
-              <span className="font-serif italic font-normal text-white text-2xl"><br />
+              <span className="font-serif italic font-normal text-white text-2xl">
+                <br />
                 {" "}
                 Singer, songwriter, badass.
               </span>
@@ -49,32 +51,42 @@ export const About = () => {
 
             <div className="space-y-4 text-muted-foreground animate-fade-in animation-delay-200">
               <p>
-                Sheila Vee is a singer, songwriter, and bandleader who refuses to stay in one lane. Across five projects — from front-porch bluegrass with Magnolia Street String Band to the plugged-in Sheila Vee Band, easygoing duo sets with Gerry, and the heavier minor-key world of Disciples of the Dead — she brings the same voice and the same songwriting instincts to every room she plays. Her debut solo album, under Music with Sheila, arrives in 2026.
-              </p>
-            </div>
-
-            <div className="glass rounded-2xl p-6 glow-border animate-fade-in animation-delay-300">
-              <p className="text-lg font-medium italic text-foreground">
-                "Singer/Songwriter, Sheila Vee, is a guitarist who plays bluegrass & jamband music, as well as the cosmic intersection of both genres."
+                Sheila Vee is a singer, songwriter, and bandleader who
+                refuses to stay in one lane. Across five projects — from
+                front-porch bluegrass with Magnolia Street String Band to
+                the plugged-in Sheila Vee Band, easygoing duo sets with
+                Gerry, and the heavier minor-key world of Disciples of the
+                Dead — she brings the same voice and the same songwriting
+                instincts to every room she plays. Her debut solo album,
+                under Music with Sheila, arrives in 2026.
               </p>
             </div>
           </div>
 
-          {/* Right Column - Hilights */}
-          <div className="grid sm:grid-cols-2 gap-6">
-            {highlights.map((item, idx) => (
+          {/* Right Column - Gallery */}
+          <div
+            className="grid grid-cols-1 grid-rows-2 gap-4 h-[450px] sm:h-[400px] lg:h-[500px]
+              lg:[grid-template-columns:1fr]
+              lg:[grid-template-areas:'hero_side1'_'hero_side2'_'banner_banner']
+              lg:grid-rows-[1fr_1fr_1fr]"
+          >
+            {galleryImages.map((img, idx) => (
               <div
                 key={idx}
-                className="glass p-6 rounded-2xl animate-fade-in"
+                className={`relative rounded-2xl overflow-hidden group animate-fade-in lg:[grid-area:${img.area}]`}
                 style={{ animationDelay: `${(idx + 1) * 100}ms` }}
               >
-                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4 hover:bg-primary/20">
-                  <item.icon className="w-6 h-6 text-primary" />
+                <img
+                  src={img.src}
+                  alt={img.alt}
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+                <div className="absolute inset-0" />
+                <div className="absolute bottom-0 left-0 right-0 p-4 translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
+                  <p className="text-sm font-medium text-white">
+                    {img.caption}
+                  </p>
                 </div>
-                <h3 className="text-lg font-semibold mb-2">{item.title}</h3>
-                <p className="text-sm text-muted-foreground">
-                  {item.description}
-                </p>
               </div>
             ))}
           </div>
