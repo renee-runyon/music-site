@@ -47,7 +47,7 @@ export const Hero = () => {
           {/* Left Column - Text Content */}
           <div className="space-y-8">
             <div className="animate-fade-in">
-              <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass text-sm text-[#fbbf24]">
+              <span className="hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-full glass text-sm text-[#fbbf24]">
                 <span className="w-2 h-2 bg-[#fbbf24] rounded-full animate-pulse" />
                 Solo Album Coming in 2026
               </span>
