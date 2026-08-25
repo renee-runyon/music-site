@@ -66,25 +66,25 @@ export const Hero = () => {
             </div>
 
             {/* CTAs */}
-            <div className="flex flex-wrap gap-4 animate-fade-in animation-delay-300">
-              <a href="#contact">
-              <Button size="lg">
-                Contact Me
-              </Button>
-              </a>
-              <a href="#projects">
-              <AnimatedBorderButton>
-                Projects<ArrowRight className="w-5 h-5" />
-              </AnimatedBorderButton>
-              </a>
-            </div>
+            <div className="flex flex-wrap gap-4 justify-center lg:justify-start animate-fade-in animation-delay-300">
+  <a href="#contact">
+    <Button size="lg">
+      Contact Me
+    </Button>
+  </a>
+  <a href="#projects">
+    <AnimatedBorderButton>
+      Projects<ArrowRight className="w-5 h-5" />
+    </AnimatedBorderButton>
+  </a>
+</div>
           </div>
         </div>
 
       </div>
 
       <div
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 
+        className="absolute bottom-8 pt-8 left-1/2 -translate-x-1/2 
       animate-fade-in animation-delay-800"
       >
         <a
