@@ -71,7 +71,7 @@ export const Hero = () => {
                 Contact Me
               </Button>
               <AnimatedBorderButton>
-                Explore My Music<ArrowRight className="w-5 h-5" />
+                Projects<ArrowRight className="w-5 h-5" />
               </AnimatedBorderButton>
             </div>
 
