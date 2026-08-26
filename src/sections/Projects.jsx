@@ -94,7 +94,7 @@ export const Projects = () => {
         </div>
 
         {/* Projects Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-8 lg:px-40 xl:px-40">
+        <div className="grid md:grid-cols-2 gap-8 lg:px-40">
           {projects.map((project, idx) => (
             <div
               key={idx}
@@ -142,7 +142,7 @@ export const Projects = () => {
           onClick={() => setSelectedProject(null)}
         >
           <div
-            className="relative max-w-5xl w-full max-h-[85vh] overflow-y-auto rounded-2xl bg-card"
+            className="relative max-w-2xl w-full max-h-[85vh] overflow-y-auto rounded-2xl bg-card"
             onClick={(e) => e.stopPropagation()}
           >
             <button

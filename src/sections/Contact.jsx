@@ -75,7 +75,7 @@ export const Contact = () => {
         message: "Message sent successfully! I'll get back to you soon.",
       });
       setFormData({ name: "", email: "", message: "" });
-    } catch (err) {
+    } catch (error) {
       console.error("EmailJS error:", error);
       setSubmitStatus({
         type: "error",
@@ -237,7 +237,7 @@ export const Contact = () => {
             {/* Availability Card */}
             <div className="glass rounded-3xl p-8 border border-primary/30">
               <div className="flex items-center gap-3 mb-4">
-                <span className="w-3 h-3 bg-[#04D900] rounded-full animate-pulse" />
+                <span className="w-3 h-3 bg-[#029500] rounded-full animate-pulse" />
                 <span className="font-medium">I'm Available!</span>
               </div>
               <p className="text-muted-foreground text-sm">

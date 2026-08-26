@@ -1,38 +1,41 @@
-import { Code2, Lightbulb, Rocket, Users } from "lucide-react";
-
 const galleryImages = [
   {
     src: "/projects/magnoliaband.jpg",
     alt: "Sheila Vee performing live",
     caption: "Sheila Vee Band",
-    area: "hero",
+    rotate: "-rotate-6",
+    translate: "translate-x-0 translate-y-0",
+    size: "w-[55%] sm:w-[52%]",
+    z: "z-20",
   },
   {
     src: "/projects/sheila-gerry.jpg",
     alt: "Magnolia Street String Band",
     caption: "Magnolia Street String Band",
-    area: "side1",
+    rotate: "rotate-3",
+    translate: "translate-x-[38%] -translate-y-[6%]",
+    size: "w-[48%] sm:w-[46%]",
+    z: "z-10",
   },
   {
     src: "/projects/sheilavband.jpg",
     alt: "Sheila Vee and Gerry",
     caption: "With Gerry",
-    area: "side2",
+    rotate: "rotate-[8deg]",
+    translate: "translate-x-[8%] translate-y-[48%]",
+    size: "w-[44%] sm:w-[42%]",
+    z: "z-30",
   },
   {
     src: "/projects/maindod.jpg",
     alt: "Disciples of the Dead",
     caption: "Disciples of the Dead",
-    area: "banner",
+    rotate: "-rotate-[5deg]",
+    translate: "translate-x-[46%] translate-y-[58%]",
+    size: "w-[50%] sm:w-[48%]",
+    z: "z-0",
   },
 ];
-
-const areaClass = {
-  hero: "lg:[grid-area:hero]",
-  side1: "lg:[grid-area:side1]",
-  side2: "lg:[grid-area:side2]",
-  banner: "lg:[grid-area:banner]",
-};
 
 export const About = () => {
   return (
@@ -70,30 +73,36 @@ export const About = () => {
             </div>
           </div>
 
-          {/* Right Column - Gallery */}
-          <div
-            className="self-center grid grid-cols-2 grid-rows-2 gap-4 h-[450px] sm:h-[400px] lg:h-[500px]
-              lg:[grid-template-columns:1fr_1fr]
-              lg:[grid-template-areas:'hero_side1'_'hero_side2'_'banner_banner']
-              lg:grid-rows-[1fr_1fr_1fr]"
-          >
+          {/* Right Column - Scrapbook Gallery */}
+          {/* Right Column - Scrapbook Gallery */}
+<div className="relative h-[420px] sm:h-[480px] lg:h-[560px] w-[300px] sm:w-[380px] lg:w-full mx-auto lg:mx-0 self-center">
             {galleryImages.map((img, idx) => (
               <div
                 key={idx}
-                className={`relative rounded-2xl overflow-hidden group animate-fade-in ${areaClass[img.area]}`}
-                style={{ animationDelay: `${(idx + 1) * 100}ms` }}
+                className={`absolute top-0 left-0 ${img.size} ${img.translate} ${img.rotate} ${img.z}
+                  group animate-fade-in transition-all duration-500 ease-out
+                  hover:rotate-0 hover:scale-105 hover:z-40`}
+                style={{ animationDelay: `${(idx + 1) * 120}ms` }}
               >
-                <img
-                  src={img.src}
-                  alt={img.alt}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 " />
-                <div className="absolute bottom-0 left-0 right-0 p-4 translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
-                  <p className="text-sm font-medium text-white">
+                {/* Polaroid frame */}
+                <div className="bg-white p-3 pb-12 rounded-sm shadow-2xl shadow-black/40">
+                  <div className="relative overflow-hidden aspect-[4/5]">
+                    <img
+                      src={img.src}
+                      alt={img.alt}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  {/* Caption, handwritten-feel */}
+                  <p className="absolute bottom-3 left-0 right-0 text-center font-serif italic text-black text-sm px-2 truncate">
                     {img.caption}
                   </p>
                 </div>
+                {/* Tape accent */}
+                <div
+                  className="absolute -top-3 left-1/2 -translate-x-1/2 w-14 h-6 bg-white/40 rotate-2
+                    shadow-sm backdrop-blur-[1px] border border-white/50"
+                />
               </div>
             ))}
           </div>
