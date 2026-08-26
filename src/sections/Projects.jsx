@@ -71,10 +71,11 @@ export const Projects = () => {
   return (
     <section id="projects" className="py-32 relative overflow-hidden">
       {/* Background glowing blobs */}
-      <div className="absolute top-1/4 right-0 w-96 h-96 bg-highlight/70 rounded-full blur-3xl" />
-      <div className="absolute bottom-1/4 right-0 w-96 h-96 bg-primary/60 rounded-full blur-3xl" />
-      <div className="absolute bottom-1/4 left-0 w-96 h-64 bg-highlight/70 rounded-full blur-3xl" />
-      <div className="absolute top-1/4 left-0 w-96 h-96 bg-primary/60 rounded-full blur-3xl" />
+      <div className="absolute top-1/4 right-40 w-96 h-96 bg-primary/80 rounded-full blur-3xl" />
+      <div className="absolute right-40 bottom-20 w-96 h-96 bg-primary/40 rounded-full blur-3xl" />
+      <div className="absolute left-40 bottom-20 w-96 h-96 bg-primary/70 rounded-full blur-3xl" />
+      <div className="absolute top-1/4 left-40 w-96 h-96 bg-primary/50 rounded-full blur-3xl" />
+
 
       <div className="container mx-auto px-6 relative z-10">
         {/* Section Header */}
@@ -93,7 +94,7 @@ export const Projects = () => {
         </div>
 
         {/* Projects Grid */}
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-8 lg:px-40 xl:px-40">
           {projects.map((project, idx) => (
             <div
               key={idx}

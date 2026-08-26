@@ -55,7 +55,7 @@
 @layer components {
   .project-card {
   /* background-color: color-mix(in srgb, var(--color-primary) 8%, var(--color-surface)); */
-  background-color: color-mix(in srgb, black 75%, transparent);
+  background-color: color-mix(in srgb, black 60%, transparent);
   backdrop-filter: blur(16px);
   border: 1px solid color-mix(in srgb, var(--color-primary) 25%, transparent);
 }
