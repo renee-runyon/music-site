@@ -27,7 +27,7 @@ export const Hero = () => {
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {[...Array(30)].map((_, i) => (
           <div
-            className="absolute w-1.5 h-1.5 rounded-full opacity-60"
+            className="absolute w-1 h-1 rounded-full opacity-50"
             style={{
               backgroundColor: "#5d9dff",
               left: `${Math.random() * 100}%`,
@@ -91,7 +91,7 @@ export const Hero = () => {
           href="#about"
           className="flex flex-col items-center gap-2 text-muted-foreground hover:text-primary transition-colors group"
         >
-          <span className="text-xs uppercase tracking-wider">Scroll</span>
+          
           <ChevronDown className="w-6 h-6 animate-bounce" />
         </a>
       </div>
