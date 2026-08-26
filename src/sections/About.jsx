@@ -42,21 +42,21 @@ export const About = () => {
           {/* Left Column */}
           <div className="space-y-8">
             <div className="animate-fade-in">
-              <span className="text-secondary-foreground text-sm font-medium tracking-wider uppercase">
+              <span className="text-secondary-foreground text-md font-medium tracking-wider uppercase">
                 About Me
               </span>
             </div>
 
-            <h2 className="text-4xl md:text-5xl font-bold leading-tight animate-fade-in animation-delay-100 text-secondary-foreground">
+            <h2 className="text-4xl md:text-5xl lg:text-5xl font-bold leading-tight animate-fade-in animation-delay-100 text-secondary-foreground">
               Sheila Vee
-              <span className="font-serif italic font-normal text-white text-2xl">
+              <span className="font-serif italic font-normal text-white text-3xl">
                 <br />
                 {" "}
                 Singer, songwriter, badass.
               </span>
             </h2>
 
-            <div className="space-y-4 text-muted-foreground animate-fade-in animation-delay-200">
+            <div className="space-y-4 text-white text-lg animate-fade-in animation-delay-200">
               <p>
                 Sheila Vee is a singer, songwriter, and bandleader who
                 refuses to stay in one lane. Across five projects — from

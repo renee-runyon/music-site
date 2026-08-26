@@ -35,7 +35,7 @@ export const Footer = () => {
               <a
                 key={link.href}
                 href={link.href}
-                className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                className="text-sm text-white hover:text-foreground transition-colors"
               >
                 {link.label}
               </a>
@@ -54,6 +54,17 @@ export const Footer = () => {
                 <social.icon className="w-5 h-5" />
               </a>
             ))}
+          </div>
+          <div className="text-center md:text-left">
+
+            <a className="text-sm text-muted-foreground mt-2">
+              Site by <span 
+              href="https://datachunkdesigns.com"
+              target="_blank" 
+              rel="nofollow noopener noreferrer">
+                Datachunk Media Designs
+                </span>
+            </a>
           </div>
         </div>
       </div>
