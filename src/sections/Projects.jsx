@@ -1,6 +1,5 @@
 import { useState } from "react";
-import { ArrowUpRight, Github, Facebook, Instagram, X } from "lucide-react";
-import { AnimatedBorderButton } from "@/components/AnimatedBorderButton";
+import { ArrowUpRight, Facebook, Instagram, Youtube, X } from "lucide-react";
 
 const projects = [
   {
@@ -8,53 +7,61 @@ const projects = [
     description:
       "Sheila's own songs, voice, and guitar out front. The sound she comes home to between every other project.",
     details:
-      "Add a longer writeup here — background, upcoming shows, how this project started, etc.",
+      "Sheila's solo project is where her original songwriting lives — stripped-back arrangements built around voice, guitar, and story. Her debut solo album is on the way for 2026, and this is the best place to hear where that record is headed.",
     image: "/projects/musicwithsheila.jpeg",
-    tags: [""],
-    link: "https://www.facebook.com/musicwithsheila",
-    github: "#",
+    tags: [],
+    link: "",
+    facebook: "https://www.facebook.com/musicwithsheila",
+    instagram: "",
+    youtube: "",
   },
   {
     title: "Magnolia Street String Band",
     description:
       "A five-piece acoustic collective featuring local musicians.",
-    details: "Longer writeup for Magnolia Street String Band goes here.",
+    details: "Magnolia Street String Band is a five-piece acoustic collective featuring incredible musicians from New Jersey, Pennsylvania, and New York. The group plays everything from traditional bluegrass to cosmic Americana.",
     image: "/projects/magnoliaband.jpg",
-    tags: [""],
+    tags: [],
     link: "https://www.magnoliastreetstringband.com/",
-    github: "",
     facebook: "https://www.facebook.com/groups/magnoliastreetstringband",
     instagram: "https://www.instagram.com/mssbmusic/",
+    youtube: "",
   },
   {
     title: "Sheila Vee Band",
     description:
       "The full electric lineup. Sheila's songs, turned up and built for the stage.",
-    details: "Longer writeup for Sheila Vee Band goes here.",
+    details: "The Sheila Vee Band is the full-lineup, plugged-in version of her songwriting — drums, bass, and electric guitar behind her voice. Details on the current roster and upcoming shows are coming soon.",
     image: "/projects/sheilavband.jpg",
-    tags: [""],
-    link: "#",
-    github: "#",
+    tags: [],
+    link: "",
+    facebook: "https://www.facebook.com/sheilaveemusic",
+    instagram: "",
+    youtube: "",
   },
   {
     title: "Sheila & Gerry Jam",
     description:
       "Monthly invitational curated by Sheila Vee & Gerry Rosenthal. Featuring the regions most talented musicians.",
-    details: "Longer writeup for the jam series goes here.",
+    details: "The Sheila & Gerry Jam happens at Pinos 13 N.4th Ave, Highland Park NJ on most first Thursdays of the month. This jam/invitational has been going strong for 4 years and growing in numbers and popularity.",
     image: "/projects/sheila-gerry.jpg",
-    tags: [""],
-    link: "#",
-    github: "#",
+    tags: [],
+    link: "",
+    facebook: "https://www.facebook.com/sheilagerryjam",
+    instagram: "",
+    youtube: "",
   },
   {
     title: "Disciples of the Dead",
     description:
       "New Jersey-based Grateful Dead tribute band featuring Michael Jaskewicz.",
-    details: "Longer writeup for Disciples of the Dead goes here.",
+    details: "Disciples of the Dead is Sheila's outlet for darker, heavier material — minor-key songwriting, atmospheric guitars, and a stage show built around mood and low light. Not for the solo-acoustic crowd.",
     image: "/projects/dodperforming.jpg",
-    tags: [""],
-    link: "#",
-    github: "#",
+    tags: [],
+    link: "",
+    facebook: "https://www.facebook.com/profile.php?id=61582860777201",
+    instagram: "https://www.instagram.com/disciplesofthedead",
+    youtube: "https://www.youtube.com/playlist?app=desktop&list=PLn__CXKP_89EWs_eeXL9LfLfnA9reqxL4"
   },
 ];
 
@@ -188,6 +195,21 @@ export const Projects = () => {
                     <Instagram className="w-4 h-4" /> Instagram
                   </a>
                 )}
+
+
+                {selectedProject.youtube && (
+                  <a
+                    href={selectedProject.youtube}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 px-4 py-2 rounded-full glass hover:bg-primary hover:text-primary-foreground transition-all text-sm"
+                  >
+                    <Youtube className="w-4 h-4" /> YouTube
+                  </a>
+                )}
+
+
+                
               </div>
             </div>
           </div>
