@@ -6,8 +6,8 @@ const galleryImages = [
     alt: "Sheila Vee performing live",
     caption: "Sheila Vee Band",
     rotate: "-rotate-6",
-    translate: "translate-x-0 translate-y-0",
-    size: "w-[55%] sm:w-[52%]",
+    position: "left-[2%] top-[0%]",
+    size: "w-[52%]",
     z: "z-20",
   },
   {
@@ -15,8 +15,8 @@ const galleryImages = [
     alt: "Magnolia Street String Band",
     caption: "Magnolia Street String Band",
     rotate: "rotate-3",
-    translate: "translate-x-[38%] -translate-y-[6%]",
-    size: "w-[48%] sm:w-[46%]",
+    position: "left-[42%] top-[2%]",
+    size: "w-[46%]",
     z: "z-10",
   },
   {
@@ -24,8 +24,8 @@ const galleryImages = [
     alt: "Sheila Vee and Gerry",
     caption: "With Gerry",
     rotate: "rotate-[8deg]",
-    translate: "translate-x-[8%] translate-y-[48%]",
-    size: "w-[44%] sm:w-[42%]",
+    position: "left-[10%] top-[46%]",
+    size: "w-[42%]",
     z: "z-30",
   },
   {
@@ -33,8 +33,8 @@ const galleryImages = [
     alt: "Disciples of the Dead",
     caption: "Disciples of the Dead",
     rotate: "-rotate-[5deg]",
-    translate: "translate-x-[46%] translate-y-[58%]",
-    size: "w-[50%] sm:w-[48%]",
+    position: "left-[46%] top-[50%]",
+    size: "w-[46%]",
     z: "z-0",
   },
 ];
@@ -78,16 +78,14 @@ export const About = () => {
           </div>
 
           {/* Right Column - Scrapbook Gallery */}
-          <div className="relative h-[420px] sm:h-[480px] lg:h-[600px] w-full sm:w-full lg:w-full mx-auto lg:mx-0 self-center">
+          <div className="relative h-[420px] sm:h-[480px] lg:h-[600px] w-[300px] sm:w-[380px] lg:w-full mx-auto lg:mx-0 self-center">
             {galleryImages.map((img, idx) => {
               const isActive = activeIndex === idx;
               return (
                 <div
                   key={idx}
-                  onClick={() =>
-                    setActiveIndex(isActive ? null : idx)
-                  }
-                  className={`absolute top-0 left-0 ${img.size} ${img.translate} ${img.rotate} ${img.z}
+                  onClick={() => setActiveIndex(isActive ? null : idx)}
+                  className={`absolute ${img.position} ${img.size} ${img.rotate} ${img.z}
                     group animate-fade-in transition-all duration-500 ease-out cursor-pointer
                     hover:rotate-0 hover:scale-105 hover:z-40
                     ${isActive ? "!rotate-0 !scale-105 !z-40" : ""}`}
@@ -102,12 +100,10 @@ export const About = () => {
                         className="w-full h-full object-cover"
                       />
                     </div>
-                    {/* Caption, handwritten-feel */}
                     <p className="absolute bottom-3 left-0 right-0 text-center font-serif italic text-black text-sm px-2 truncate">
                       {img.caption}
                     </p>
                   </div>
-                  {/* Tape accent */}
                   <div
                     className="absolute -top-3 left-1/2 -translate-x-1/2 w-14 h-6 bg-white/40 rotate-2
                       shadow-sm backdrop-blur-[1px] border border-white/50"
