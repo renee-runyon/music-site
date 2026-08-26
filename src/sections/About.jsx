@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 const galleryImages = [
   {
     src: "/projects/magnoliaband.jpg",
@@ -38,6 +40,8 @@ const galleryImages = [
 ];
 
 export const About = () => {
+  const [activeIndex, setActiveIndex] = useState(null);
+
   return (
     <section id="about" className="py-32 relative overflow-hidden">
       <div className="container mx-auto px-6 relative z-10">
@@ -74,37 +78,43 @@ export const About = () => {
           </div>
 
           {/* Right Column - Scrapbook Gallery */}
-          {/* Right Column - Scrapbook Gallery */}
-<div className="relative h-[420px] sm:h-[480px] lg:h-[560px] w-[300px] sm:w-[380px] lg:w-full mx-auto lg:mx-0 self-center">
-            {galleryImages.map((img, idx) => (
-              <div
-                key={idx}
-                className={`absolute top-0 left-0 ${img.size} ${img.translate} ${img.rotate} ${img.z}
-                  group animate-fade-in transition-all duration-500 ease-out
-                  hover:rotate-0 hover:scale-105 hover:z-40`}
-                style={{ animationDelay: `${(idx + 1) * 120}ms` }}
-              >
-                {/* Polaroid frame */}
-                <div className="bg-white p-3 pb-12 rounded-sm shadow-2xl shadow-black/40">
-                  <div className="relative overflow-hidden aspect-[4/5]">
-                    <img
-                      src={img.src}
-                      alt={img.alt}
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                  {/* Caption, handwritten-feel */}
-                  <p className="absolute bottom-3 left-0 right-0 text-center font-serif italic text-black text-sm px-2 truncate">
-                    {img.caption}
-                  </p>
-                </div>
-                {/* Tape accent */}
+          <div className="relative h-[420px] sm:h-[480px] lg:h-[560px] w-[300px] sm:w-full lg:w-full mx-auto lg:mx-0 self-center">
+            {galleryImages.map((img, idx) => {
+              const isActive = activeIndex === idx;
+              return (
                 <div
-                  className="absolute -top-3 left-1/2 -translate-x-1/2 w-14 h-6 bg-white/40 rotate-2
-                    shadow-sm backdrop-blur-[1px] border border-white/50"
-                />
-              </div>
-            ))}
+                  key={idx}
+                  onClick={() =>
+                    setActiveIndex(isActive ? null : idx)
+                  }
+                  className={`absolute top-0 left-0 ${img.size} ${img.translate} ${img.rotate} ${img.z}
+                    group animate-fade-in transition-all duration-500 ease-out cursor-pointer
+                    hover:rotate-0 hover:scale-105 hover:z-40
+                    ${isActive ? "!rotate-0 !scale-105 !z-40" : ""}`}
+                  style={{ animationDelay: `${(idx + 1) * 120}ms` }}
+                >
+                  {/* Polaroid frame */}
+                  <div className="bg-white p-3 pb-12 rounded-sm shadow-2xl shadow-black/40">
+                    <div className="relative overflow-hidden aspect-[4/5]">
+                      <img
+                        src={img.src}
+                        alt={img.alt}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                    {/* Caption, handwritten-feel */}
+                    <p className="absolute bottom-3 left-0 right-0 text-center font-serif italic text-black text-sm px-2 truncate">
+                      {img.caption}
+                    </p>
+                  </div>
+                  {/* Tape accent */}
+                  <div
+                    className="absolute -top-3 left-1/2 -translate-x-1/2 w-14 h-6 bg-white/40 rotate-2
+                      shadow-sm backdrop-blur-[1px] border border-white/50"
+                  />
+                </div>
+              );
+            })}
           </div>
         </div>
       </div>
