@@ -1,12 +1,13 @@
 @import "tailwindcss";
 
 @theme {
-  --color-background: rgb(28, 36, 54);
+
+  --color-background: #06122D;
   --color-foreground: #f0f2f5;
 
   --color-card: #141a1f;
 
-  --color-primary: #427BD6;
+  --color-primary: #3684FE;
   --color-primary-foreground: #ffffff;
 
   --color-secondary: #5d9dff;
@@ -23,6 +24,12 @@
 
   --color-highlight: #f5a623;
   --color-surface: #1a2329;
+}
+
+.button-1 {
+  background-color: #0869D8;
+  text: #5d9dff;
+  background: #3684FE
 }
 
 @layer base {
@@ -47,19 +54,20 @@
 
 @layer components {
   .project-card {
-  background-color: color-mix(in srgb, var(--color-primary) 8%, var(--color-surface));
+  /* background-color: color-mix(in srgb, var(--color-primary) 8%, var(--color-surface)); */
+  background-color: color-mix(in srgb, black 75%, transparent);
   backdrop-filter: blur(16px);
   border: 1px solid color-mix(in srgb, var(--color-primary) 25%, transparent);
 }
 
   .glass {
-    background-color: color-mix(in srgb, var(--color-surface) 50%, transparent);
+    background-color: color-mix(in srgb, black 50%, transparent);
     backdrop-filter: blur(16px);
     border: 1px solid color-mix(in srgb, var(--color-border) 50%, transparent);
   }
 
   .glass-strong {
-    background-color: color-mix(in srgb, var(--color-surface) 80%, transparent);
+    background-color: color-mix(in srgb, var(--color-background) 50%, transparent);
     backdrop-filter: blur(24px);
     border: 1px solid color-mix(in srgb, var(--color-border) 60%, transparent);
   }

@@ -31,9 +31,9 @@ export const Navbar = () => {
       <nav className="container mx-auto px-6 flex items-center justify-between">
         <a
           href="#"
-          className="text-xl font-bold tracking-tight hover:text-[#fbbf24]"
+          className="lg:text-4xl text-2xl font-bold tracking-tight hover:text-[#fbbf24]"
         >
-          Sheila Vee<span className="text-primary">.</span>
+          SV<span className="text-primary text-4xl">.</span>
         </a>
 
         {/* Desktop Nav */}
@@ -43,7 +43,7 @@ export const Navbar = () => {
               <a
                 href={link.href}
                 key={index}
-                className="px-4 py-2 text-sm text-white hover:text-[#fbbf24] rounded-full hover:bg-surface"
+                className="px-4 py-2 text-lg text-white hover:text-[#fbbf24] rounded-full hover:bg-surface"
               >
                 {link.label}
               </a>
