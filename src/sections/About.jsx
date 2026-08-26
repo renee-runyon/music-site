@@ -78,7 +78,7 @@ export const About = () => {
           </div>
 
           {/* Right Column - Scrapbook Gallery */}
-          <div className="relative h-[420px] sm:h-[480px] lg:h-[560px] w-[300px] sm:w-full lg:w-full mx-auto lg:mx-0 self-center">
+          <div className="relative h-[420px] sm:h-[480px] lg:h-[600px] w-full sm:w-full lg:w-full mx-auto lg:mx-0 self-center">
             {galleryImages.map((img, idx) => {
               const isActive = activeIndex === idx;
               return (
