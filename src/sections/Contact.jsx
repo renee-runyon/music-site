@@ -1,3 +1,4 @@
+import { useState } from "react";
 import {
   Mail,
   Phone,
@@ -7,7 +8,6 @@ import {
   AlertCircle,
 } from "lucide-react";
 import { Button } from "@/components/Button";
-import { useState } from "react";
 import emailjs from "@emailjs/browser";
 
 const contactInfo = [
@@ -37,9 +37,11 @@ export const Contact = () => {
     email: "",
     message: "",
   });
+
   const [isLoading, setIsLoading] = useState(false);
+
   const [submitStatus, setSubmitStatus] = useState({
-    type: null, // 'success' or 'error'
+    type: null,
     message: "",
   });
 
@@ -48,6 +50,7 @@ export const Contact = () => {
 
     setIsLoading(true);
     setSubmitStatus({ type: null, message: "" });
+
     try {
       const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
       const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
@@ -74,9 +77,15 @@ export const Contact = () => {
         type: "success",
         message: "Message sent successfully! I'll get back to you soon.",
       });
-      setFormData({ name: "", email: "", message: "" });
+
+      setFormData({
+        name: "",
+        email: "",
+        message: "",
+      });
     } catch (error) {
       console.error("EmailJS error:", error);
+
       setSubmitStatus({
         type: "error",
         message:
@@ -86,94 +95,118 @@ export const Contact = () => {
       setIsLoading(false);
     }
   };
+
   return (
-    <section id="contact" className="py-32 relative overflow-hidden absolute inset-0 bg-gradient-to-b from-black via-black/1 to-black/0">
-      <div className="absolute top-0 left-0 w-full h-full">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/5 blur-3xl" />
-        <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-highlight/5 blur-3xl" />
+    <section
+      id="contact"
+      className="relative w-full overflow-x-hidden overflow-y-hidden bg-gradient-to-b from-black via-black/1 to-black/0 py-24 md:py-32"
+    >
+      {/* Background decoration */}
+      <div className="pointer-events-none absolute inset-0 w-full">
+        <div className="absolute left-1/4 top-1/4 h-96 w-96 bg-primary/5 blur-3xl" />
+        <div className="absolute bottom-1/4 right-1/4 h-64 w-64 bg-highlight/5 blur-3xl" />
       </div>
 
-      <div className="container mx-auto px-6 relative z-10">
+      {/* One centered wrapper for the entire section */}
+      <div className="relative z-10 mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8">
+        {/* Section Header */}
+        <div className="mx-auto mb-16 w-full max-w-3xl text-center md:mb-20">
+          <div className="mb-8 animate-fade-in">
+            <span className="block text-sm uppercase tracking-[0.3em] text-[#5d9dff]">
+              Contact
+            </span>
+          </div>
 
-{/* Section Header */}
-        <div className="mb-20 max-w-2xl">
+          <h2 className="section-title animate-fade-in text-4xl font-bold uppercase tracking-tight text-white animation-delay-100 md:text-6xl">
+            Let's connect.
+          </h2>
 
-<div className="space-y-8">
-            <div className="animate-fade-in">
-              <span className="block text-md tracking-[0.3em] uppercase text-[#5d9dff] mb-4 animate-fade-in">
-            Contact
-          </span>
-            </div>
-
-            <h2 className="section-title text-4xl md:text-6xl font-bold uppercase tracking-tight text-white animate-fade-in animation-delay-100">
-            Let's connect.</h2>
-            
-            <div className="space-y-4 text-white text-lg animate-fade-in animation-delay-200">
-              <p>
-                Whether you’re booking a venue, writing about the music, or reaching out as a fan or collaborator, this goes straight to Sheila.
-              </p>
-            </div>
+          <div className="mt-6 animate-fade-in text-lg leading-relaxed text-white/70 animation-delay-200">
+            <p>
+              Whether you’re booking a venue, writing about the music, or
+              reaching out as a fan or collaborator, this goes straight to
+              Sheila.
+            </p>
           </div>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12 max-w-5xl mx-auto">
-          <div className="glass p-8 border border-primary/30 animate-fade-in animation-delay-300">
+        {/* Main Content */}
+        <div className="mx-auto grid w-full max-w-5xl min-w-0 grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-12">
+          {/* Contact Form */}
+          <div className="glass min-w-0 border border-primary/30 p-6 animate-fade-in sm:p-8 animation-delay-300">
             <form className="space-y-6" onSubmit={handleSubmit}>
               <div>
                 <label
                   htmlFor="name"
-                  className="block text-sm font-medium mb-2"
+                  className="mb-2 block text-sm font-medium"
                 >
                   Name
                 </label>
+
                 <input
                   id="name"
+                  name="name"
                   type="text"
                   required
                   placeholder="Your name..."
                   value={formData.name}
                   onChange={(e) =>
-                    setFormData({ ...formData, name: e.target.value })
+                    setFormData({
+                      ...formData,
+                      name: e.target.value,
+                    })
                   }
-                  className="w-full px-4 py-3 bg-surface border border-border focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all"
+                  className="w-full min-w-0 border border-border bg-surface px-4 py-3 outline-none transition-all focus:border-primary focus:ring-1 focus:ring-primary"
                 />
               </div>
 
               <div>
                 <label
                   htmlFor="email"
-                  type="email"
-                  className="block text-sm font-medium mb-2"
+                  className="mb-2 block text-sm font-medium"
                 >
                   Email
                 </label>
+
                 <input
+                  id="email"
+                  name="email"
+                  type="email"
                   required
                   placeholder="your@email.com"
                   value={formData.email}
                   onChange={(e) =>
-                    setFormData({ ...formData, email: e.target.value })
+                    setFormData({
+                      ...formData,
+                      email: e.target.value,
+                    })
                   }
-                  className="w-full px-4 py-3 bg-surface border border-border focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all"
+                  className="w-full min-w-0 border border-border bg-surface px-4 py-3 outline-none transition-all focus:border-primary focus:ring-1 focus:ring-primary"
                 />
               </div>
 
               <div>
                 <label
                   htmlFor="message"
-                  className="block text-sm font-medium mb-2"
+                  className="mb-2 block text-sm font-medium"
                 >
                   Message
                 </label>
+
                 <textarea
+                  id="message"
+                  name="message"
                   rows={5}
                   required
+                  placeholder="Your message..."
                   value={formData.message}
                   onChange={(e) =>
-                    setFormData({ ...formData, message: e.target.value })
+                    setFormData({
+                      ...formData,
+                      message: e.target.value,
+                    })
                   }
-                  placeholder="Your message..."
-                  className="w-full px-4 py-3 bg-surface border border-border focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all resize-none"
+                  className="w-full min-w-0 resize-none border border-border bg-surface px-4 py-3 outline-none transition-all focus:border-primary focus:ring-1 focus:ring-primary"
                 />
               </div>
 
@@ -184,72 +217,82 @@ export const Contact = () => {
                 disabled={isLoading}
               >
                 {isLoading ? (
-                  <>Sending...</>
+                  "Sending..."
                 ) : (
                   <>
                     Send Message
-                    <Send className="w-5 h-5" />
+                    <Send className="h-5 w-5" />
                   </>
                 )}
               </Button>
 
               {submitStatus.type && (
                 <div
-                  className={`flex items-center gap-3
-                     p-4 ${
-                       submitStatus.type === "success"
-                         ? "bg-green-500/10 border border-green-500/20 text-green-400"
-                         : "bg-red-500/10 border border-red-500/20 text-red-400"
-                     }`}
+                  className={`flex items-start gap-3 p-4 ${
+                    submitStatus.type === "success"
+                      ? "border border-green-500/20 bg-green-500/10 text-green-400"
+                      : "border border-red-500/20 bg-red-500/10 text-red-400"
+                  }`}
                 >
                   {submitStatus.type === "success" ? (
-                    <CheckCircle className="w-5 h-5 flex-shrink-0" />
+                    <CheckCircle className="mt-0.5 h-5 w-5 flex-shrink-0" />
                   ) : (
-                    <AlertCircle className="w-5 h-5 flex-shrink-0" />
+                    <AlertCircle className="mt-0.5 h-5 w-5 flex-shrink-0" />
                   )}
+
                   <p className="text-sm">{submitStatus.message}</p>
                 </div>
               )}
             </form>
           </div>
 
-          {/* Contact Info */}
-          <div className="space-y-6 animate-fade-in animation-delay-400">
-            <div className="glass p-8">
-              <h3 className="text-xl font-semibold mb-6">
+          {/* Right Column */}
+          <div className="min-w-0 space-y-6 animate-fade-in animation-delay-400">
+            {/* Contact Information */}
+            <div className="glass p-6 sm:p-8">
+              <h3 className="mb-6 text-xl font-semibold">
                 Contact Information
               </h3>
+
               <div className="space-y-4">
-                {contactInfo.map((item, i) => (
-                  <a
-                    key={i}
-                    href={item.href}
-                    className="flex items-center gap-4 p-4 hover:bg-surface transition-colors group"
-                  >
-                    <div className="w-12 h-12 bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-                      <item.icon className="w-5 h-5 text-primary" />
-                    </div>
-                    <div>
-                      <div className="text-sm text-muted-foreground">
-                        {item.label}
+                {contactInfo.map((item) => {
+                  const Icon = item.icon;
+
+                  return (
+                    <a
+                      key={item.label}
+                      href={item.href}
+                      className="flex min-w-0 items-center gap-4 p-4 transition-colors hover:bg-surface"
+                    >
+                      <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center bg-primary/10 transition-colors hover:bg-primary/20">
+                        <Icon className="h-5 w-5 text-primary" />
                       </div>
-                      <div className="font-medium">{item.value}</div>
-                    </div>
-                  </a>
-                ))}
+
+                      <div className="min-w-0">
+                        <div className="text-sm text-muted-foreground">
+                          {item.label}
+                        </div>
+
+                        <div className="break-words font-medium">
+                          {item.value}
+                        </div>
+                      </div>
+                    </a>
+                  );
+                })}
               </div>
             </div>
 
             {/* Availability Card */}
-            <div className="glass p-8 border border-primary/30">
-              <div className="flex items-center gap-3 mb-4">
-                <span className="w-3 h-3 bg-[#029500] rounded-full animate-pulse" />
+            <div className="glass border border-primary/30 p-6 sm:p-8">
+              <div className="mb-4 flex items-center gap-3">
+                <span className="h-3 w-3 animate-pulse rounded-full bg-[#029500]" />
                 <span className="font-medium">I'm Available!</span>
               </div>
-              <p className="text-muted-foreground text-sm">
+
+              <p className="text-sm text-muted-foreground">
                 I'm currently open to new opportunities and exciting projects.
-                Whether you need a solo musician or a full band,
-                let's talk!
+                Whether you need a solo musician or a full band, let's talk!
               </p>
             </div>
           </div>
