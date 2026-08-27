@@ -144,7 +144,10 @@ export const Projects2 = () => {
           <h2 className="animate-fade-in text-4xl font-bold uppercase tracking-tight text-white animation-delay-100 md:text-6xl">
             Five rooms.
             <br />
-            One voice.
+            <span className="font-serif italic font-normal text-[#fbbf24] text-3xl">
+                {" "}
+                One voice.
+              </span>
           </h2>
 
           <p className="mt-6 animate-fade-in text-lg text-white/60 animation-delay-200">
@@ -164,14 +167,14 @@ export const Projects2 = () => {
                   <button
                     type="button"
                     onClick={() => setExpandedIndex(idx)}
-                    className="group flex w-full items-center justify-between gap-4 py-6 text-left"
+                    className="group flex w-full items-center justify-between gap-4 py-8 text-left"
                   >
                     <div>
                       <h3
                         className={`text-2xl font-bold uppercase tracking-tight transition-colors md:text-3xl ${
                           isExpanded
                             ? "text-[#5d9dff]"
-                            : "text-white group-hover:text-[#5d9dff]"
+                            : "text-white group-hover:text-amber-300"
                         }`}
                       >
                         {project.title}

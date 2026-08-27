@@ -17,8 +17,8 @@ export const Hero2 = () => {
       {/* Content, bottom-anchored */}
       <div className="container mx-auto px-6 pb-20 pt-40 relative z-10">
         <div className="max-w-4xl">
-          <span className="block text-sm tracking-[0.3em] uppercase text-[#5d9dff] mb-6 animate-fade-in">
-            Solo Album — 2026
+          <span className="block text-sm tracking-[0.3em] uppercase text-amber-400 mb-6 animate-fade-in">
+            Solo album coming 2026
           </span>
 
           <h1 className="text-6xl md:text-8xl font-bold leading-[0.95] uppercase tracking-tight text-white animate-fade-in animation-delay-100">
@@ -33,29 +33,19 @@ export const Hero2 = () => {
           </p>
 
           <div className="flex flex-wrap gap-4 animate-fade-in animation-delay-400">
-            <a href="#contact">
+            <a href="#projects2">
               <button className="px-8 py-4 bg-white text-black font-semibold uppercase tracking-wider text-sm hover:bg-[#5d9dff] hover:text-white transition-colors">
-                Contact Me
+                Projects
               </button>
             </a>
-            <a href="#projects">
+            <a href="#contact">
               <button className="px-8 py-4 border border-white/30 text-white font-semibold uppercase tracking-wider text-sm hover:border-white transition-colors flex items-center gap-2">
-                Projects <ArrowRight className="w-4 h-4" />
+                Contact <ArrowRight className="w-4 h-4" />
               </button>
             </a>
           </div>
 
-          <div className="flex items-center gap-5 mt-12 animate-fade-in animation-delay-500">
-            {[Facebook, Instagram, Youtube].map((Icon, idx) => (
-              <a
-                key={idx}
-                href="#"
-                className="text-white/50 hover:text-white transition-colors"
-              >
-                <Icon className="w-5 h-5" />
-              </a>
-            ))}
-          </div>
+          
         </div>
       </div>
 
