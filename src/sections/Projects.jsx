@@ -78,28 +78,37 @@ export const Projects = () => {
 
 
       <div className="container mx-auto px-6 relative z-10">
-        {/* Section Header */}
-        <div className="text-center mx-auto max-w-3xl mb-16">
-          <span className="block text-sm tracking-[0.3em] uppercase text-[#5d9dff] mb-4 animate-fade-in">
+        <div className="my-8 mb-20 h-1 w-24 animate-fade-in animation-delay-200 bg-[#5d9dff]" />
+{/* Section Header */}
+        <div className="mb-20 max-w-2xl">
+
+<div className="space-y-8">
+            <div className="animate-fade-in">
+              <span className="block text-md tracking-[0.3em] uppercase text-[#5d9dff] mb-4 animate-fade-in">
             Projects - OPTION 1
           </span>
-          <h2 className="text-4xl md:text-5xl font-bold mt-4 mb-6 animate-fade-in animation-delay-100 text-secondary-foreground">
-            Music
-            <span className="font-serif italic font-bold text-white"> that makes an impact.</span>
-          </h2>
-          <p className="text-white animate-fade-in animation-delay-200 text-lg">
-            Sheila splits her time across five very different rooms.<br />
-            Tap any project to read more and jump straight to its music and socials.
-          </p>
+            </div>
+
+            <h2 className="section-title text-4xl md:text-6xl font-bold uppercase tracking-tight text-white animate-fade-in animation-delay-100">
+            Five rooms.</h2>
+            <p className="italic text-sans font-normal text-accent/70 text-lg">
+                One voice.
+              </p>
+            <div className="space-y-4 text-white text-lg animate-fade-in animation-delay-200">
+              <p>
+                Sheila splits her time across five very different projects. Click a name to view its image, details, and socials.
+              </p>
+            </div>
+          </div>
         </div>
 
         {/* Projects Grid */}
-        <div className="grid md:grid-cols-2 gap-8 lg:px-40">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, idx) => (
             <div
               key={idx}
               onClick={() => setSelectedProject(project)}
-              className="group project-card rounded-2xl overflow-hidden animate-fade-in md:row-span-1 cursor-pointer"
+              className="group project-card  overflow-hidden animate-fade-in md:row-span-1 cursor-pointer border-accent/50 border-1"
               style={{ animationDelay: `${(idx + 1) * 100}ms` }}
             >
               {/* Image */}

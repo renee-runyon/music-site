@@ -50,19 +50,16 @@ export const About = () => {
           {/* Left Column */}
           <div className="space-y-8">
             <div className="animate-fade-in">
-              <span className="block text-sm tracking-[0.3em] uppercase text-[#5d9dff] mb-4 animate-fade-in">
+              <span className="block text-md tracking-[0.3em] uppercase text-[#5d9dff] mb-4 animate-fade-in">
             About
           </span>
             </div>
 
             <h2 className="section-title text-4xl md:text-6xl font-bold uppercase tracking-tight text-white animate-fade-in animation-delay-100">
-            Sheila Vee.
-            <span className="font-serif italic font-normal text-[#fbbf24] text-3xl">
-                <br />
-                {" "}
+            Sheila Vee.</h2>
+            <p className="italic text-sans font-normal text-accent/70 text-lg">
                 Singer, songwriter, badass.
-              </span>
-          </h2>
+              </p>
             <div className="space-y-4 text-white text-lg animate-fade-in animation-delay-200">
               <p>
                 Sheila Vee is a singer, songwriter, and bandleader who

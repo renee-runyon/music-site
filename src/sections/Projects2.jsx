@@ -137,23 +137,25 @@ export const Projects2 = () => {
 
         {/* Section Header */}
         <div className="mb-20 max-w-2xl">
-          <span className="mb-4 block animate-fade-in text-sm uppercase tracking-[0.3em] text-[#5d9dff]">
+
+<div className="space-y-8">
+            <div className="animate-fade-in">
+              <span className="block text-md tracking-[0.3em] uppercase text-[#5d9dff] mb-4 animate-fade-in">
             Projects - OPTION 2
           </span>
+            </div>
 
-          <h2 className="section-title animate-fade-in text-4xl font-bold uppercase tracking-tight text-white animation-delay-100 md:text-6xl">
-            Five rooms.
-            <br />
-            <span className="font-serif italic font-normal text-[#fbbf24] text-3xl">
-                {" "}
+            <h2 className="section-title text-4xl md:text-6xl font-bold uppercase tracking-tight text-white animate-fade-in animation-delay-100">
+            Five rooms.</h2>
+            <p className="italic text-sans font-normal text-accent/70 text-lg">
                 One voice.
-              </span>
-          </h2>
-
-          <p className="mt-6 animate-fade-in text-lg text-white/60 animation-delay-200">
-            Sheila splits her time across five very different projects. Click
-            a name to view its image, details, and socials.
-          </p>
+              </p>
+            <div className="space-y-4 text-white text-lg animate-fade-in animation-delay-200">
+              <p>
+                Sheila splits her time across five very different projects. Click a name to view its image, details, and socials.
+              </p>
+            </div>
+          </div>
         </div>
 
         <div className="grid items-start gap-12 lg:grid-cols-2 lg:gap-20">
@@ -163,7 +165,7 @@ export const Projects2 = () => {
               const isExpanded = expandedIndex === idx;
 
               return (
-                <div key={project.title} className="border-b border-white/10">
+                <div key={project.title} className="border-2 my-4 border-white/10 bg-black/50 px-4">
                   <button
                     type="button"
                     onClick={() => setExpandedIndex(idx)}
