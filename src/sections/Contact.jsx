@@ -87,7 +87,8 @@ export const Contact = () => {
     }
   };
   return (
-    <section id="contact" className="py-32 relative overflow-hidden">
+    <section id="contact" className="py-32 relative overflow-hidden absolute inset-0 bg-gradient-to-b from-black via-black/1 to-black/0">
+      <div className="mb-20 ml-16 h-1 w-24 bg-[#5d9dff] my-8 animate-fade-in animation-delay-200" />
       <div className="absolute top-0 left-0 w-full h-full">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
         <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-highlight/5 rounded-full blur-3xl" />
@@ -95,17 +96,15 @@ export const Contact = () => {
 
       <div className="container mx-auto px-6 relative z-10">
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="text-secondary-foreground text-md font-medium tracking-wider uppercase animate-fade-in">
-            Get In Touch
+        <div className="animate-fade-in text-left max-w-auto mx-auto mb-16">
+
+<span className="block text-sm tracking-[0.3em] uppercase text-[#5d9dff] mb-4 animate-fade-in">
+            Contact
           </span>
-          <h2 className="text-4xl md:text-5xl font-bold mt-4 mb-6 animate-fade-in animation-delay-100 text-secondary-foreground">
-            Let's {" "}
-            <span className="font-serif italic font-normal text-white">
-              connect.
-            </span>
+<h2 className="text-4xl md:text-6xl font-bold uppercase tracking-tight text-white animate-fade-in animation-delay-100">
+            Let's Connect
           </h2>
-          <p className="text-white text-lg animate-fade-in animation-delay-200">
+          <p className="text-white text-lg animate-fade-in animation-delay-200 py-8">
             Whether you’re booking a venue, writing about the music, or reaching out as a fan or collaborator, this goes straight to Sheila.
           </p>
         </div>

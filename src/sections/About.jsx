@@ -43,26 +43,26 @@ export const About = () => {
   const [activeIndex, setActiveIndex] = useState(null);
 
   return (
-    <section id="about" className="py-32 relative overflow-hidden">
+    <section id="about" className="py-32 relative overflow-visible bg-gradient-to-b from-black via-black/10 to-black/0">
+      <div className="mb-20 ml-16 h-1 w-24 bg-[#5d9dff] my-8 animate-fade-in animation-delay-200" />
       <div className="container mx-auto px-6 relative z-10">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Left Column */}
           <div className="space-y-8">
             <div className="animate-fade-in">
-              <span className="text-secondary-foreground text-md font-medium tracking-wider uppercase">
-                About Me
-              </span>
+              <span className="block text-sm tracking-[0.3em] uppercase text-[#5d9dff] mb-4 animate-fade-in">
+            About
+          </span>
             </div>
 
-            <h2 className="text-4xl md:text-5xl lg:text-5xl font-bold leading-tight animate-fade-in animation-delay-100 text-secondary-foreground">
-              Sheila Vee
-              <span className="font-serif italic font-normal text-white text-3xl">
+            <h2 className="text-4xl md:text-6xl font-bold uppercase tracking-tight text-white animate-fade-in animation-delay-100">
+            Sheila Vee.
+            <span className="font-serif italic font-normal text-[#fbbf24] text-3xl">
                 <br />
                 {" "}
                 Singer, songwriter, badass.
               </span>
-            </h2>
-
+          </h2>
             <div className="space-y-4 text-white text-lg animate-fade-in animation-delay-200">
               <p>
                 Sheila Vee is a singer, songwriter, and bandleader who

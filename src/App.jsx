@@ -1,9 +1,8 @@
 import { Navbar } from "@/layout/Navbar";
-import { Hero } from "@/sections/Hero";
+import { Hero2 } from "@/sections/Hero2";
 import { About } from "@/sections/About";
-import { Projects } from "@/sections/Projects";
-
-{/* import { Testimonials } from "@/sections/Testimonials"; */}
+import { Projects } from "@/sections/Projects"
+import { Projects2 } from "@/sections/Projects2";
 import { Contact } from "@/sections/Contact";
 import { Footer } from "./layout/Footer";
 
@@ -12,11 +11,12 @@ function App() {
     <div className="min-h-screen overflow-x-hidden">
       <Navbar />
       <main>
-        <Hero />
+        <Hero2 />
         <About />
-        <Projects />
-        {/* <Testimonials /> */}
+        <Projects2 />
+        
         <Contact />
+        <Projects />
       </main>
       <Footer />
     </div>
