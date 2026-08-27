@@ -26,6 +26,10 @@
   --color-surface: #1a2329;
 }
 
+.section-title {
+  font-family: "Kalam", cursive;
+}
+
 .button-1 {
   background-color: #0869D8;
   text: #5d9dff;
@@ -61,7 +65,7 @@
 }
 
   .glass {
-    background-color: color-mix(in srgb, black 50%, transparent);
+    background-color: color-mix(in srgb, black 70%, transparent);
     backdrop-filter: blur(16px);
     border: 1px solid color-mix(in srgb, var(--color-border) 50%, transparent);
   }

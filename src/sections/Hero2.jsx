@@ -21,7 +21,7 @@ export const Hero2 = () => {
             Solo album coming 2026
           </span>
 
-          <h1 className="text-6xl md:text-8xl font-bold leading-[0.95] uppercase tracking-tight text-white animate-fade-in animation-delay-100">
+          <h1 className="section-title text-6xl md:text-8xl font-bold leading-[0.95] uppercase tracking-tight text-white animate-fade-in animation-delay-100">
             Sheila Vee
           </h1>
 

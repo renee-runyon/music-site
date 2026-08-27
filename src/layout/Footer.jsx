@@ -1,10 +1,5 @@
 import { Github, Linkedin, Twitter, Heart } from "lucide-react";
 
-const socialLinks = [
-  { icon: Github, href: "#", label: "GitHub" },
-  { icon: Linkedin, href: "#", label: "LinkedIn" },
-  { icon: Twitter, href: "#", label: "Twitter" },
-];
 
 const footerLinks = [
   { href: "#about", label: "About" },
@@ -21,11 +16,11 @@ export const Footer = () => {
         <div className="flex flex-col md:flex-row items-center justify-between gap-8">
           {/* Logo & Copyright */}
           <div className="text-center md:text-left">
-            <a href="#" className="text-xl font-bold tracking-tight">
+            <a href="#" className="section-title text-xl font-bold tracking-tight">
               Sheila Vee<span className="text-primary">.</span>
             </a>
             <p className="text-sm text-muted-foreground mt-2">
-              © {currentYear} Sheila Vee. All rights reserved.
+              © {currentYear}  |   All rights reserved.
             </p>
           </div>
 
@@ -42,19 +37,7 @@ export const Footer = () => {
             ))}
           </nav>
 
-          {/* Social Links */}
-          <div className="flex items-center gap-4">
-            {socialLinks.map((social) => (
-              <a
-                key={social.label}
-                href={social.href}
-                aria-label={social.label}
-                className="p-2 rounded-full glass hover:bg-primary/10 hover:text-primary transition-all"
-              >
-                <social.icon className="w-5 h-5" />
-              </a>
-            ))}
-          </div>
+
           <div className="text-center md:text-left">
 
             <a className="text-sm text-muted-foreground mt-2">

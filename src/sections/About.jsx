@@ -55,7 +55,7 @@ export const About = () => {
           </span>
             </div>
 
-            <h2 className="text-4xl md:text-6xl font-bold uppercase tracking-tight text-white animate-fade-in animation-delay-100">
+            <h2 className="section-title text-4xl md:text-6xl font-bold uppercase tracking-tight text-white animate-fade-in animation-delay-100">
             Sheila Vee.
             <span className="font-serif italic font-normal text-[#fbbf24] text-3xl">
                 <br />

@@ -101,7 +101,7 @@ export const Contact = () => {
 <span className="block text-sm tracking-[0.3em] uppercase text-[#5d9dff] mb-4 animate-fade-in">
             Contact
           </span>
-<h2 className="text-4xl md:text-6xl font-bold uppercase tracking-tight text-white animate-fade-in animation-delay-100">
+<h2 className="section-title text-4xl md:text-6xl font-bold uppercase tracking-tight text-white animate-fade-in animation-delay-100">
             Let's Connect
           </h2>
           <p className="text-white text-lg animate-fade-in animation-delay-200 py-8">

@@ -141,7 +141,7 @@ export const Projects2 = () => {
             Projects - OPTION 2
           </span>
 
-          <h2 className="animate-fade-in text-4xl font-bold uppercase tracking-tight text-white animation-delay-100 md:text-6xl">
+          <h2 className="section-title animate-fade-in text-4xl font-bold uppercase tracking-tight text-white animation-delay-100 md:text-6xl">
             Five rooms.
             <br />
             <span className="font-serif italic font-normal text-[#fbbf24] text-3xl">
