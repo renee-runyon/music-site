@@ -34,13 +34,13 @@ export const Hero2 = () => {
 
           <div className="flex flex-wrap gap-4 animate-fade-in animation-delay-400">
             <a href="#projects2">
-              <button className="px-8 py-4 bg-white text-black font-semibold uppercase tracking-wider text-sm hover:bg-[#5d9dff] hover:text-white transition-colors">
+              <button className="px-8 py-4 bg-[#5d9dff] text-black font-semibold uppercase tracking-wider text-sm hover:bg-[#5d9dff]/70 hover:text-white transition-colors">
                 Projects
               </button>
             </a>
             <a href="#contact">
               <button className="px-8 py-4 border border-white/30 text-white font-semibold uppercase tracking-wider text-sm hover:border-white transition-colors flex items-center gap-2">
-                Contact <ArrowRight className="w-4 h-4" />
+                Contact
               </button>
             </a>
           </div>
