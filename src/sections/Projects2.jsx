@@ -130,7 +130,7 @@ export const Projects2 = () => {
   return (
     <section
       id="projects2"
-      className="relative overflow-hidden bg-gradient-to-t from-black via-black/1 to-[#06122D] py-16"
+      className="relative overflow-hidden bg-gradient-to-b from-[#06122D] via-[#06122D]/10 to-black py-16"
     >
       <div className="container relative z-10 mx-auto px-6">
         <div className="my-8 mb-20 h-1 w-24 animate-fade-in animation-delay-200 bg-[#5d9dff]" />
