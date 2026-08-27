@@ -43,9 +43,9 @@ export const About = () => {
   const [activeIndex, setActiveIndex] = useState(null);
 
   return (
-    <section id="about" className="py-32 relative overflow-visible bg-gradient-to-b from-black via-black/10 to-black/0">
-      <div className="mb-20 ml-16 h-1 w-24 bg-[#5d9dff] my-8 animate-fade-in animation-delay-200" />
+    <section id="about" className="py-8 relative overflow-visible bg-gradient-to-b from-black via-black/10 to-black/0">
       <div className="container mx-auto px-6 relative z-10">
+        <div className="mb-20 h-1 w-24 bg-[#5d9dff] my-8 animate-fade-in animation-delay-200" />
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Left Column */}
           <div className="space-y-8">

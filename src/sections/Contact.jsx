@@ -88,7 +88,6 @@ export const Contact = () => {
   };
   return (
     <section id="contact" className="py-32 relative overflow-hidden absolute inset-0 bg-gradient-to-b from-black via-black/1 to-black/0">
-      <div className="mb-20 ml-16 h-1 w-24 bg-[#5d9dff] my-8 animate-fade-in animation-delay-200" />
       <div className="absolute top-0 left-0 w-full h-full">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
         <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-highlight/5 rounded-full blur-3xl" />
@@ -97,6 +96,7 @@ export const Contact = () => {
       <div className="container mx-auto px-6 relative z-10">
         {/* Section Header */}
         <div className="animate-fade-in text-left max-w-auto mx-auto mb-16">
+          <div className="mb-20 h-1 w-24 bg-[#5d9dff] my-8 animate-fade-in animation-delay-200" />
 
 <span className="block text-sm tracking-[0.3em] uppercase text-[#5d9dff] mb-4 animate-fade-in">
             Contact

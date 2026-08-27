@@ -75,9 +75,11 @@ const SocialLinks = ({ project }) => (
         onClick={(e) => e.stopPropagation()}
         className="flex items-center gap-1.5 text-white/50 hover:text-white text-sm uppercase tracking-wider transition-colors"
       >
-        <ArrowUpRight className="w-4 h-4" /> Website
+        <ArrowUpRight className="w-4 h-4" />
+        Website
       </a>
     )}
+
     {project.facebook && (
       <a
         href={project.facebook}
@@ -86,9 +88,11 @@ const SocialLinks = ({ project }) => (
         onClick={(e) => e.stopPropagation()}
         className="flex items-center gap-1.5 text-white/50 hover:text-white text-sm uppercase tracking-wider transition-colors"
       >
-        <Facebook className="w-4 h-4" /> Facebook
+        <Facebook className="w-4 h-4" />
+        Facebook
       </a>
     )}
+
     {project.instagram && (
       <a
         href={project.instagram}
@@ -97,9 +101,11 @@ const SocialLinks = ({ project }) => (
         onClick={(e) => e.stopPropagation()}
         className="flex items-center gap-1.5 text-white/50 hover:text-white text-sm uppercase tracking-wider transition-colors"
       >
-        <Instagram className="w-4 h-4" /> Instagram
+        <Instagram className="w-4 h-4" />
+        Instagram
       </a>
     )}
+
     {project.youtube && (
       <a
         href={project.youtube}
@@ -108,86 +114,99 @@ const SocialLinks = ({ project }) => (
         onClick={(e) => e.stopPropagation()}
         className="flex items-center gap-1.5 text-white/50 hover:text-white text-sm uppercase tracking-wider transition-colors"
       >
-        <Youtube className="w-4 h-4" /> YouTube
+        <Youtube className="w-4 h-4" />
+        YouTube
       </a>
     )}
   </div>
 );
 
 export const Projects2 = () => {
-  const [hoveredIndex, setHoveredIndex] = useState(null);
-  const [expandedIndex, setExpandedIndex] = useState(null);
+  // The first project is selected when the page loads.
+  const [expandedIndex, setExpandedIndex] = useState(0);
 
-  const displayIndex = hoveredIndex ?? 0;
+  const displayProject = projects2[expandedIndex];
 
   return (
-    <section id="projects2" className="py-60 relative overflow-hidden bg-gradient-to-t from-black via-black/1 to-[#06122D]">
-        
-        <div className="mb-20 ml-16 h-1 w-24 bg-[#5d9dff] my-8 animate-fade-in animation-delay-200" />
-      <div className="container mx-auto px-6 relative z-10">
+    <section
+      id="projects2"
+      className="relative overflow-hidden bg-gradient-to-t from-black via-black/1 to-[#06122D] py-16"
+    >
+      <div className="container relative z-10 mx-auto px-6">
+        <div className="my-8 mb-20 h-1 w-24 animate-fade-in animation-delay-200 bg-[#5d9dff]" />
+
         {/* Section Header */}
-        <div className="max-w-2xl mb-20">
-          <span className="block text-sm tracking-[0.3em] uppercase text-[#5d9dff] mb-4 animate-fade-in">
-            Projects
+        <div className="mb-20 max-w-2xl">
+          <span className="mb-4 block animate-fade-in text-sm uppercase tracking-[0.3em] text-[#5d9dff]">
+            Projects - OPTION 2
           </span>
-          <h2 className="text-4xl md:text-6xl font-bold uppercase tracking-tight text-white animate-fade-in animation-delay-100">
+
+          <h2 className="animate-fade-in text-4xl font-bold uppercase tracking-tight text-white animation-delay-100 md:text-6xl">
             Five rooms.
             <br />
             One voice.
           </h2>
-          <p className="text-white/60 text-lg mt-6 animate-fade-in animation-delay-200">
-            Sheila splits her time across five very different projects.
-            Hover a name to preview, or tap to read more and jump straight to
-            its music and socials.
+
+          <p className="mt-6 animate-fade-in text-lg text-white/60 animation-delay-200">
+            Sheila splits her time across five very different projects. Click
+            a name to view its image, details, and socials.
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
-          {/* Left: Title list */}
+        <div className="grid items-start gap-12 lg:grid-cols-2 lg:gap-20">
+          {/* Left: Project title list */}
           <div className="border-t border-white/10">
             {projects2.map((project, idx) => {
               const isExpanded = expandedIndex === idx;
+
               return (
-                <div key={idx} className="border-b border-white/10">
+                <div key={project.title} className="border-b border-white/10">
                   <button
-                    onClick={() =>
-                      setExpandedIndex(isExpanded ? null : idx)
-                    }
-                    onMouseEnter={() => setHoveredIndex(idx)}
-                    onMouseLeave={() => setHoveredIndex(null)}
-                    className="w-full text-left py-6 flex items-center justify-between gap-4 group"
+                    type="button"
+                    onClick={() => setExpandedIndex(idx)}
+                    className="group flex w-full items-center justify-between gap-4 py-6 text-left"
                   >
                     <div>
-                      <h3 className="text-2xl md:text-3xl font-bold uppercase tracking-tight text-white group-hover:text-[#5d9dff] transition-colors">
+                      <h3
+                        className={`text-2xl font-bold uppercase tracking-tight transition-colors md:text-3xl ${
+                          isExpanded
+                            ? "text-[#5d9dff]"
+                            : "text-white group-hover:text-[#5d9dff]"
+                        }`}
+                      >
                         {project.title}
                       </h3>
-                      <p className="text-white/50 mt-1 hidden sm:block">
+
+                      <p className="mt-1 hidden text-white/50 sm:block">
                         {project.description}
                       </p>
                     </div>
+
                     <ArrowUpRight
-                      className={`w-6 h-6 text-white/40 flex-shrink-0 transition-transform duration-300 ${
+                      className={`h-6 w-6 flex-shrink-0 text-white/40 transition-transform duration-300 ${
                         isExpanded ? "rotate-45 text-[#5d9dff]" : ""
                       }`}
                     />
                   </button>
 
-                  {/* Mobile / touch expansion — replaces modal entirely */}
+                  {/* Mobile project details */}
                   <div
-                    className={`lg:hidden overflow-hidden transition-all duration-500 ${
+                    className={`overflow-hidden transition-all duration-500 lg:hidden ${
                       isExpanded ? "max-h-[600px] pb-6" : "max-h-0"
                     }`}
                   >
-                    <div className="aspect-video overflow-hidden mb-4">
+                    <div className="mb-4 aspect-video overflow-hidden">
                       <img
                         src={project.image}
                         alt={project.title}
-                        className="w-full h-full object-cover"
+                        className="h-full w-full object-cover"
                       />
                     </div>
+
                     <p className="text-white/70">
                       {project.details || project.description}
                     </p>
+
                     <SocialLinks project={project} />
                   </div>
                 </div>
@@ -195,23 +214,32 @@ export const Projects2 = () => {
             })}
           </div>
 
-          {/* Right: Sticky image preview — desktop only */}
-          <div className="hidden lg:block sticky top-32">
-            <div className="aspect-[4/5] overflow-hidden bg-white/5">
+          {/* Right: Desktop project image and details */}
+          <div className="sticky top-32 hidden lg:block">
+            <div className="relative aspect-[4/3] overflow-hidden bg-white/5">
               {projects2.map((project, idx) => (
                 <img
-                  key={idx}
+                  key={project.title}
                   src={project.image}
                   alt={project.title}
-                  className={`w-full h-full object-cover absolute inset-0 transition-opacity duration-500 ${
-                    displayIndex === idx ? "opacity-100" : "opacity-0"
+                  className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-500 ${
+                    expandedIndex === idx ? "opacity-100" : "opacity-0"
                   }`}
                 />
               ))}
             </div>
-            <p className="text-white/50 mt-4 text-sm uppercase tracking-wider">
-              {projects2[displayIndex].title}
-            </p>
+
+            <div className="mt-6">
+              <h3 className="text-2xl font-bold uppercase tracking-tight text-white">
+                {displayProject.title}
+              </h3>
+
+              <p className="mt-3 text-white/70">
+                {displayProject.details || displayProject.description}
+              </p>
+
+              <SocialLinks project={displayProject} />
+            </div>
           </div>
         </div>
       </div>

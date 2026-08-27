@@ -81,7 +81,7 @@ export const Projects = () => {
         {/* Section Header */}
         <div className="text-center mx-auto max-w-3xl mb-16">
           <span className="block text-sm tracking-[0.3em] uppercase text-[#5d9dff] mb-4 animate-fade-in">
-            Projects
+            Projects - OPTION 1
           </span>
           <h2 className="text-4xl md:text-5xl font-bold mt-4 mb-6 animate-fade-in animation-delay-100 text-secondary-foreground">
             Music
